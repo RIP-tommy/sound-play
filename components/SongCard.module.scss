@@ -1,0 +1,187 @@
+$desktop-resolution : 1920px;
+$tablet-wide : 1024px;
+$tablet-narrow : 768px;
+$smartphone-big : 420px;
+$smartphone-small : 320px;
+
+
+/* info and filter section */
+
+
+.info_filter_section {
+  text-align: center;
+  width: 1024px;
+  margin: auto;
+  margin-bottom: 10vh;
+  margin-top: 3vh;
+  .info_link {
+    display: flex;
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      width: 100%;
+      height: 8vh;
+      background-color: black;
+      color: white;
+      font-size: 2rem;
+      margin-bottom: 2vh;
+    }
+    a:nth-child(1) {
+      margin-right: 1vw;
+    }
+  }
+}
+
+
+/* card main container */
+
+
+
+.loading_list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 19%);
+  justify-content: space-between;
+  width: 1024px;
+  padding: 0;
+  margin: auto;
+  &:empty {
+    height: 0;
+    border: none;
+  }
+
+
+  /* wrapper for each card */
+
+
+  .playTile_item {
+    list-style: none;
+    margin-bottom: 2vh;
+    width: 100%;
+    box-sizing: border-box;
+    border: 3px solid;
+    background-color: black;
+  }
+}
+
+
+
+
+/* style for play tile and artwork image */
+
+
+.playTile {
+  width: 100%;
+  position: relative;
+  display: block;
+}
+.playTile_artwork {
+  padding-top: 100%;
+  height: 0;
+  position: relative;
+  z-index: 2;
+}
+.cover_image {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  cursor: pointer;
+}
+.artwork {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+
+/* style for play and like button  */
+
+
+.play_pause_button_container {
+  position: absolute;
+  left: 34%;
+  top: 34%;
+  right: 34%;
+  bottom: 34%;
+  z-index: 5;
+  opacity: 0;
+  &:hover {
+    opacity: 1;
+  }
+}
+.play_pause_button {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 75% 75%;
+  background-position: 44%;
+  z-index: 5;
+  background-image: url('/img/artwork-play.svg');
+  cursor: pointer;
+}
+.is_playing {
+  background-image: url('/img/artwork-pause.svg');
+}
+.play_like_count {
+  display: flex;
+  justify-content: space-between;
+  margin: 12px 0 8px 0;
+  .play_icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: 4px;
+    margin-right: 4px;
+    background-image: url('/img/play-white.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .num_play {
+    color:white;
+  }
+  .like_info_display_section{
+    margin-right: 4px;
+    .like_button {
+      background-image: url('/img/heart-outlined-white.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    .like_checked_button {
+      background-image: url('/img/heart-filled-in-white.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    .num_likes {
+      color: white;
+    }
+  }
+}
+
+
+/* style for description sector  */
+
+.current_playing_song_info {
+  width: 5vw;
+}
+.description {
+  padding-left: 4px;
+  margin-bottom: 8px;
+}
+.description a {
+  color: white;
+  text-decoration: none;
+}
+.song_title h3 {
+  margin: 2vh 0 0 0;
+}
+.artist_name {
+  font-size: 0.9rem;
+}
