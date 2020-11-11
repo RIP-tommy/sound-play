@@ -1,8 +1,4 @@
-$desktop-resolution : 1920px;
-$tablet-wide : 1024px;
-$tablet-narrow : 768px;
-$smartphone-big : 420px;
-$smartphone-small : 320px;
+@import './mixin';
 
 
 /* info and filter section */
@@ -12,7 +8,7 @@ $smartphone-small : 320px;
   text-align: center;
   width: 1024px;
   margin: auto;
-  margin-bottom: 10vh;
+  margin-bottom: 3vh;
   margin-top: 3vh;
   .info_link {
     display: flex;
@@ -25,7 +21,6 @@ $smartphone-small : 320px;
       background-color: black;
       color: white;
       font-size: 2rem;
-      margin-bottom: 2vh;
     }
     a:nth-child(1) {
       margin-right: 1vw;
@@ -39,8 +34,8 @@ $smartphone-small : 320px;
 
 
 .loading_list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 19%);
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   width: 1024px;
   padding: 0;
@@ -57,7 +52,7 @@ $smartphone-small : 320px;
   .playTile_item {
     list-style: none;
     margin-bottom: 2vh;
-    width: 100%;
+    width: 16%;
     box-sizing: border-box;
     border: 3px solid;
     background-color: black;
@@ -133,44 +128,54 @@ $smartphone-small : 320px;
 .play_like_count {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: 12px 0 8px 0;
-  .play_icon {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    margin-left: 4px;
-    margin-right: 4px;
-    background-image: url('/img/play-white.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
-  .num_play {
-    color:white;
-  }
-  .like_info_display_section{
-    margin-right: 4px;
-    .like_button {
-      background-image: url('/img/heart-outlined-white.svg');
-      background-size: contain;
-      background-repeat: no-repeat;
-    }
-    .like_checked_button {
-      background-image: url('/img/heart-filled-in-white.svg');
-      background-size: contain;
-      background-repeat: no-repeat;
-    }
-    .num_likes {
-      color: white;
-    }
-  }
+}
+.play_icon {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-left: 4px;
+  margin-right: 4px;
+  background-image: url('/img/play-white.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.num_play {
+  color:white;
+  font-size: 0.8rem;
+}
+.like_info_display_section{
+  margin-right: 4px;
+  display: flex;
+  align-items: center;
+}
+.like_button {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-image: url('/img/heart-outlined-white.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.like_checked_button {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-image: url('/img/heart-filled-in-white.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.num_likes {
+  margin-left: 4px;
+  color: white;
+  font-size: 0.8rem;
 }
 
 
 /* style for description sector  */
 
-.current_playing_song_info {
-  width: 5vw;
-}
+
 .description {
   padding-left: 4px;
   margin-bottom: 8px;
@@ -180,8 +185,115 @@ $smartphone-small : 320px;
   text-decoration: none;
 }
 .song_title h3 {
-  margin: 2vh 0 0 0;
+  margin: 8px 0 0 0;
+  font-size: 0.95rem;
 }
 .artist_name {
-  font-size: 0.9rem;
+  font-size: 0.75rem;
+}
+
+/* for media query */
+
+
+@include tabletWide {
+  .play_pause_button_container {
+    opacity: 1;
+  }
+  .info_filter_section {
+    width: 768px;
+  }
+  .loading_list{
+    width: 768px;
+  }
+}
+@include tablet {
+  .play_pause_button_container {
+    opacity: 1;
+  }
+  .info_filter_section {
+    width: 768px;
+    .info_link {
+      a {
+        height: 40px;
+        font-size: 1.5rem;
+      }
+    }
+  }
+  .loading_list{
+    width: 768px;
+  }
+}
+@include tabletNarrow {
+  .play_pause_button_container {
+    opacity: 1;
+  }
+  .info_filter_section {
+    width: 586px;
+    .info_link {
+      a {
+        height: 40px;
+        font-size: 1.2rem;
+      }
+    }
+  }
+  .loading_list {
+    width: 586px;
+
+    .playTile_item {
+      width: 24%;
+    }
+  }
+}
+@include mobileBig {
+  .play_pause_button_container {
+    opacity: 1;
+  }
+  .info_filter_section {
+    width: 85%;
+    .info_link {
+      a {
+        height: 30px;
+        font-size: 1.2rem;
+      }
+    }
+  }
+  .song_title h3 {
+    font-size: 0.9rem;
+  }
+  .artist_name {
+    font-size: 0.7rem;
+  }
+  .loading_list {
+    width: 85%;
+    .playTile_item {
+      width: 49%;
+    }
+  }
+}
+@include mobileSmall {
+  .play_pause_button_container {
+    opacity: 1;
+  }
+  .info_filter_section {
+    width: 90%;
+    .info_link {
+      a {
+        height: 5vh;
+        font-size: 1.2rem;
+      }
+    }
+  }
+  .song_title h3 {
+    font-size: 0.9rem;
+  }
+  .artist_name {
+    font-size: 0.7rem;
+  }
+  .loading_list {
+    width: 90%;
+
+    .playTile_item {
+      width: 49%;
+    }
+  }
 }

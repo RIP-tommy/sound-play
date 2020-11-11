@@ -36,11 +36,14 @@ const SongCard = ({ songLists }) => {
 
 
   const updatePlayer = (index) =>{
-    setAudioSrc(songLists[index].audio);
+    
+    const currentSong = songLists[index].audio;
+    setAudioSrc(currentSong);
     setSelectedArtist(songLists[index].author);
     setSelectedTitle(songLists[index].name);
     setSelectedArtwork(songLists[index].img);
     setSelected(index+1);
+    audioRef.current.load();
   }
 
   const playOrPause = () => {
@@ -248,7 +251,7 @@ const SongCard = ({ songLists }) => {
                 <span className={songCardStyle.num_play}>500</span>
               </div>
               <div className={songCardStyle.like_info_display_section}>
-                <button className={cn(songCardStyle.like_button, 'sc_ir')}>like</button>
+                <a role="button" className={cn(songCardStyle.like_button, 'sc_ir')}>like</a>
                 <span className={songCardStyle.num_likes}>10</span>
               </div>
             </div>
@@ -257,7 +260,10 @@ const SongCard = ({ songLists }) => {
         ))}
       </ul>
       
-      <audio ref={ audioRef } src={ audioSource } type="audio/ogg"/>
+      <audio ref={ audioRef }>
+        <source src={ audioSource } type="audio/ogg"/>
+          Your browser does not support the audio element.
+      </audio>
 
       <div className={playerStyle.bottom_player_slider} ref={ audioPlayerRef }>
         

@@ -1,8 +1,4 @@
-$desktop-resolution : 1920px;
-$tablet-wide : 1024px;
-$tablet-narrow : 768px;
-$smartphone-big : 420px;
-$smartphone-small : 320px;
+@import './mixin';
 
 
 /* style for bottom player */
@@ -135,7 +131,7 @@ $smartphone-small : 320px;
   opacity: 0;
   transition: opacity .15s;
 }
-.hover_playhead{
+.hover_playhead {
   position: absolute;
   z-index: 1;
   top: -4px;
@@ -355,4 +351,81 @@ $smartphone-small : 320px;
   background-size: cover;
   background-repeat: no-repeat;
   background-size: 16px 16px;
+}
+
+
+/* for media query */
+
+
+@include tabletWide {
+  .volume_control_section {
+    display: none;
+  }
+  .hover_playhead {
+    display: none;
+  }
+}
+@include tablet {
+  .volume_control_section {
+    display: none;
+  }
+  .playtime_section{
+    width: 240px;
+  }
+  .play_time_line {
+    width: 240px;
+  }
+  .hover_playhead {
+    display: none;
+  }
+  .song_info {
+    width: 90px;
+  }
+}
+@include tabletNarrow {
+  .volume_control_section {
+    display: none;
+  }
+  .playtime_section{
+    width: 240px;
+  }
+  .play_time_line {
+    width: 240px;
+  }
+  .hover_playhead {
+    display: none;
+  }
+  .song_info {
+    width: 90px;
+  }
+}
+@include mobileBig {
+  .volume_control_section {
+    display: none;
+  }
+  .play_time_progress,
+  .playtime_section,
+  .play_time_duration {
+    display: none;
+  }
+  .current_playing_song_info {
+    margin-left: 4vw;
+  }
+}
+@include mobileSmall {
+  .volume_control_section {
+    display: none;
+  }
+  .play_time_progress,
+  .playtime_section,
+  .play_time_duration {
+    display: none;
+  }
+  .current_playing_song_info {
+    margin-left: 4vw;
+    display: none;
+  }
+  .song_info {
+    width: 100px;
+  }
 }

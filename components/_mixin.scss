@@ -1,0 +1,37 @@
+@import "./screenResolutionVariables";
+
+@mixin mobileSmall {
+  @media (max-width: #{$smartphone-small - 1px}) {
+    @content;
+  }
+}
+
+@mixin mobileBig {
+  @media (min-width: #{$smartphone-small}) and (max-width: #{$smartphone-big - 1px}) {
+    @content;
+  }
+}
+
+@mixin tabletNarrow {
+  @media (min-width: #{$smartphone-big}) and (max-width: #{$tablet-narrow - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-narrow}) and (max-width: #{$tablet-wide - 1px}) {
+    @content;
+  }
+}
+
+@mixin tabletWide {
+  @media (min-width: #{$tablet-wide}) and (max-width: #{$desktop-resolution - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-resolution}) {
+    @content;
+  }
+}
