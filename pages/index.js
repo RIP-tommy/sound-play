@@ -8,9 +8,11 @@ const Home = ({musicLists}) => {
   return (
     <div className="container">
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+        <title>OPCD | WMM</title>
+        <link rel="icon" href="https://opcd.kr/wp-content/uploads/2020/07/cropped-140x140_opcd-2-32x32.png" sizes="32x32"/>
+        <link rel="icon" href="https://opcd.kr/wp-content/uploads/2020/07/cropped-140x140_opcd-2-192x192.png" sizes="192x192"/>
+        <link rel="apple-touch-icon" href="https://opcd.kr/wp-content/uploads/2020/07/cropped-140x140_opcd-2-180x180.png"/>
+        <meta name="msapplication-TileImage" content="https://opcd.kr/wp-content/uploads/2020/07/cropped-140x140_opcd-2-270x270.png"/>
       </Head>
       
       <Header />
