@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import SongCard from '../components/SongCard'
-import Footer from '../components/Footer'
 import Header from '../components/Header'
 
 
@@ -8,17 +7,11 @@ const Home = ({musicLists}) => {
   return (
     <div className="container">
       <Head>
-        <title>OPCD | WMM</title>
-        <link rel="icon" href="https://opcd.kr/wp-content/uploads/2020/07/cropped-140x140_opcd-2-32x32.png" sizes="32x32"/>
-        <link rel="icon" href="https://opcd.kr/wp-content/uploads/2020/07/cropped-140x140_opcd-2-192x192.png" sizes="192x192"/>
-        <link rel="apple-touch-icon" href="https://opcd.kr/wp-content/uploads/2020/07/cropped-140x140_opcd-2-180x180.png"/>
-        <meta name="msapplication-TileImage" content="https://opcd.kr/wp-content/uploads/2020/07/cropped-140x140_opcd-2-270x270.png"/>
+        <title>Sound Play</title>
       </Head>
       
       <Header />
-      <img src="/img/banner.png" alt="banner_info" style={{ width:'100%' }}/>
       <SongCard songLists={musicLists} />
-      <Footer />
 
       <style jsx global>{`
         html,

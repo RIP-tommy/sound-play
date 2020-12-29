@@ -1,8 +1,6 @@
-# OPCD-WMM demo web page
+# Sound Play
 
-Making demo opcd-wmm web page using nextjs.
-
-If you want to visit a site, click https://next-opcd-wmm-demo.vercel.app/ .
+I made these for studying a site that can deal with audio data
 
 ## What is in these web page
 

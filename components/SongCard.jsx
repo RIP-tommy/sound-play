@@ -211,12 +211,6 @@ const SongCard = ({ songLists }) => {
 
   return (
     <div className="songCard_section">
-      <div className={songCardStyle.info_filter_section}>
-        <div className={songCardStyle.info_link}>
-          <a>행사안내</a>
-          <a>참가하기</a>
-        </div>
-      </div>
       <ul className={songCardStyle.loading_list}>
         {songLists.map((musicList, index) => (
           <li key={musicList.id} className={songCardStyle.playTile_item}>
